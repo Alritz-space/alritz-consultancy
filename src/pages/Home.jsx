@@ -9,7 +9,7 @@ export default function Home() {
           <h1 className="text-3xl md:text-5xl font-bold text-blue-900 mb-4">
             Trusted Tax Consultancy for Individuals &amp; Small Businesses
           </h1>
-          <p className="text-base md:text-lg text-slate-700 mb-8">
+          <p className="text-base md:text-lg text-slate-700 mb-8 max-w-3xl">
             Alritz Consultancy helps you navigate Income Tax, GST Filing, and Financial Planning - so you can focus on growth, not paperwork.
           </p>
           <a
@@ -48,45 +48,37 @@ export default function Home() {
                   <svg width="36" height="36" fill="none" viewBox="0 0 24 24" className="mx-auto mb-2 text-blue-600" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM12 12c-4.418 0-8 2.239-8 5v3h16v-3c0-2.761-3.582-5-8-5z"/></svg>
                 ),
               },
-            ].map((s, idx) => (
+            ].map((service, idx) => (
               <div
                 key={idx}
                 className="flex-1 bg-white rounded-xl shadow hover:shadow-md transition p-6 flex flex-col items-center text-center"
               >
-                {s.icon}
-                <h3 className="font-semibold text-lg text-blue-700 mb-2">{s.title}</h3>
-                <p className="text-slate-600 text-sm">{s.desc}</p>
+                {service.icon}
+                <h3 className="font-semibold text-lg text-blue-700 mb-2">{service.title}</h3>
+                <p className="text-slate-600 text-sm">{service.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <div className="mt-auto">
-        {/* Footer */}
-        <footer className="bg-blue-900 text-slate-100 text-sm text-center py-6">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-2 mb-2">
-            <span>
-              <a href="mailto:alritz.consultancy@gmail.com" className="inline-flex items-center gap-1 hover:underline focus:underline">
-                <MailIcon className="h-4 w-4" /> alritz.consultancy@gmail.com
-              </a>
-            </span>
-            <span className="hidden md:inline">|</span>
-            <span>
-              <a href="tel:+919999999999" className="inline-flex items-center gap-1 hover:underline focus:underline">
-                <PhoneIcon className="h-4 w-4" /> +91-99999-99999
-              </a>
-            </span>
-            <span className="hidden md:inline">|</span>
-            <a href="https://github.com/Alritz-space/alritz-consultancy" target="_blank" rel="noopener noreferrer" className="inline-block hover:underline">
-              GitHub
-            </a>
-          </div>
-          <div>
-            © {new Date().getFullYear()} Alritz Consultancy. All rights reserved.
-          </div>
-        </footer>
-      </div>
+      {/* Footer */}
+      <footer className="bg-blue-900 text-slate-100 text-sm text-center py-6 mt-auto">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-2 mb-2">
+          <a href="mailto:alritz.consultancy@gmail.com" className="inline-flex items-center gap-1 hover:underline focus:underline">
+            <MailIcon className="h-4 w-4" /> alritz.consultancy@gmail.com
+          </a>
+          <span className="hidden md:inline">|</span>
+          <a href="tel:+919999999999" className="inline-flex items-center gap-1 hover:underline focus:underline">
+            <PhoneIcon className="h-4 w-4" /> +91-99999-99999
+          </a>
+          <span className="hidden md:inline">|</span>
+          <a href="https://github.com/Alritz-space/alritz-consultancy" target="_blank" rel="noopener noreferrer" className="inline-block hover:underline">
+            GitHub
+          </a>
+        </div>
+        <div>© {new Date().getFullYear()} Alritz Consultancy. All rights reserved.</div>
+      </footer>
     </div>
   );
 }

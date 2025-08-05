@@ -3,13 +3,13 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]       # Deploy on pushes to main branch
-  workflow_dispatch:       # Allow manual trigger from Actions tab
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
-  contents: read           # Needed to checkout repo contents
-  pages: write             # Needed to publish to GitHub Pages
-  id-token: write          # For authorizatio
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: 'pages'
@@ -36,5 +36,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GT_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist

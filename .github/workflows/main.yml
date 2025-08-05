@@ -9,7 +9,7 @@ on:
 permissions:
   contents: read           # Needed to checkout repo contents
   pages: write             # Needed to publish to GitHub Pages
-  id-token: write          # For authorization
+  id-token: write          # For authorizatio
 
 concurrency:
   group: 'pages'

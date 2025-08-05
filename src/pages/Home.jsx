@@ -67,8 +67,8 @@ export default function Home() {
         <footer className="bg-blue-900 text-slate-100 text-sm text-center py-6">
           <div className="flex flex-col md:flex-row items-center justify-center gap-2 mb-2">
             <span>
-              <a href="mailto:hello@alritzconsultancy.in" className="inline-flex items-center gap-1 hover:underline focus:underline">
-                <MailIcon className="h-4 w-4" /> hello@alritzconsultancy.in
+              <a href="mailto:alritz.consultancy@gmail.com" className="inline-flex items-center gap-1 hover:underline focus:underline">
+                <MailIcon className="h-4 w-4" /> alritz.consultancy@gmail.com
               </a>
             </span>
             <span className="hidden md:inline">|</span>
@@ -78,7 +78,7 @@ export default function Home() {
               </a>
             </span>
             <span className="hidden md:inline">|</span>
-            <a href="https://github.com/alritz-consultancy" target="_blank" rel="noopener noreferrer" className="inline-block hover:underline">
+            <a href="https://github.com/Alritz-space/alritz-consultancy" target="_blank" rel="noopener noreferrer" className="inline-block hover:underline">
               GitHub
             </a>
           </div>

@@ -66,7 +66,7 @@ export default function Home() {
       <footer className="bg-blue-900 text-slate-100 text-sm text-center py-6 mt-auto">
         <div className="flex flex-col md:flex-row items-center justify-center gap-2 mb-2">
           <a href="mailto:alritz.consultancy@gmail.com" className="inline-flex items-center gap-1 hover:underline focus:underline">
-            <MailIcon className="h-4 w-4" /> alritz.consultancy@gmail.com
+            <EnvelopeIcon className="h-4 w-4" /> alritz.consultancy@gmail.com
           </a>
           <span className="hidden md:inline">|</span>
           <a href="tel:+919999999999" className="inline-flex items-center gap-1 hover:underline focus:underline">

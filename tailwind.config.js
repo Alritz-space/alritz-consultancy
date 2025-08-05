@@ -1,25 +1,24 @@
 const { fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  mode: 'jit',
-  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    "./index.html",
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     extend: {
-      fontFamily: {
-        primary: ['Inter', ...fontFamily.sans],
-      },
-      colors: {
-        primary: {
-          400: '#00E0F3',
-          500: '#00c4fd',
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: 0, transform: 'translateY(10px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
         },
-        dark: '#333333',
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.6s ease-out forwards',
       },
     },
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 };

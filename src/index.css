@@ -35,23 +35,23 @@
 
   /* Write your own custom base styles here */
   h1 {
-    @apply text-3xl font-bold md:text-5xl font-primary;
+    @apply text-3xl font-bold md:text-5xl font-sans;
   }
 
   h2 {
-    @apply text-2xl font-bold md:text-4xl font-primary;
+    @apply text-2xl font-bold md:text-4xl font-sans;
   }
 
   h3 {
-    @apply text-xl font-bold md:text-3xl font-primary;
+    @apply text-xl font-bold md:text-3xl font-sans;
   }
 
   h4 {
-    @apply text-lg font-bold font-primary;
+    @apply text-lg font-bold font-sans;
   }
 
   body {
-    @apply text-sm font-primary md:text-base;
+    @apply text-sm font-sans md:text-base;
   }
 
   .layout {

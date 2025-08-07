@@ -1,4 +1,5 @@
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
 const services = [
   {
@@ -35,26 +36,26 @@ const services = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
-      {/* Hero */}
-      <header className="bg-gradient-to-r from-blue-50 to-white shadow-lg">
-        <div className="max-w-5xl mx-auto px-4 py-20 flex flex-col items-center text-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-blue-900 mb-6 leading-relaxed max-w-3xl animate-fadeIn">
+    <div className="min-h-screen flex flex-col bg-slate-50 font-inter">
+      {/* Hero Section */}
+      <header className="bg-gradient-to-r from-blue-50 to-white shadow-md">
+        <div className="max-w-5xl mx-auto px-4 py-20 text-center">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-blue-900 mb-6 leading-tight">
             Trusted Tax Consultancy for Individuals & Small Businesses
           </h1>
-          <p className="text-lg md:text-xl text-slate-700 mb-12 max-w-xl leading-relaxed animate-fadeIn delay-150">
-            Alritz Consultancy helps you navigate Income Tax, GST Filing, and Financial Planning - so you can focus on growth, not paperwork.
+          <p className="text-lg md:text-xl text-slate-700 mb-10 max-w-2xl mx-auto">
+            Alritz Consultancy helps you navigate Income Tax, GST Filing, and Financial Planning — so you can focus on growth, not paperwork.
           </p>
-          <a
-            href="/contact"
-            className="inline-block px-8 py-4 bg-blue-700 text-white rounded-lg font-semibold shadow-md hover:scale-105 transform transition-transform duration-300 focus:outline-none focus:ring-4 focus:ring-blue-400"
+          <Link
+            to="/contact"
+            className="inline-block px-8 py-4 bg-blue-700 text-white rounded-lg font-semibold shadow hover:scale-105 transition-transform duration-300 focus:outline-none focus:ring-4 focus:ring-blue-400"
           >
             Contact Us
-          </a>
+          </Link>
         </div>
       </header>
 
-      {/* Services */}
+      {/* Services Section */}
       <section className="mt-16 mb-20">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-blue-800 mb-10 text-center">Our Core Services</h2>
@@ -62,12 +63,12 @@ export default function Home() {
             {services.map((service) => (
               <div
                 key={service.title}
-                className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-[1.03] text-center cursor-pointer"
+                className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 hover:scale-[1.03] text-center"
               >
-                <div className="inline-flex justify-center items-center w-16 h-16 mb-6 rounded-full bg-blue-100 text-blue-600 mx-auto">
+                <div className="w-16 h-16 mb-6 mx-auto flex items-center justify-center rounded-full bg-blue-100 text-blue-600">
                   {service.icon}
                 </div>
-                <h3 className="font-semibold text-xl text-blue-700 mb-3">{service.title}</h3>
+                <h3 className="text-xl font-semibold text-blue-700 mb-3">{service.title}</h3>
                 <p className="text-sm text-slate-600">{service.desc}</p>
               </div>
             ))}
@@ -86,7 +87,12 @@ export default function Home() {
             <PhoneIcon className="h-4 w-4" /> +91-99999-99999
           </a>
           <span className="hidden md:inline">|</span>
-          <a href="https://github.com/alritz-consultancy" target="_blank" rel="noopener noreferrer" className="inline-block hover:underline">
+          <a
+            href="https://github.com/Alritz-space/alritz-consultancy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
             GitHub
           </a>
         </div>

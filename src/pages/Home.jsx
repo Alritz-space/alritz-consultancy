@@ -1,4 +1,3 @@
-import { EnvelopeIcon, PhoneIcon, ClockIcon, LockClosedIcon, ChartBarIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 
 const services = [

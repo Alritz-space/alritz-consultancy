@@ -12,7 +12,7 @@ export default function Contact() {
       </div>
 
       <form
-        action="https://formspree.io/f/YOUR_ID" // Replace this with your Formspree ID
+        action="https://formspree.io/f/mnnzodva" // Replace this with your Formspree ID
         method="POST"
         className="max-w-xl mx-auto bg-gray-50 shadow-lg p-6 rounded-lg space-y-4"
       >
@@ -25,7 +25,7 @@ export default function Contact() {
       </form>
 
       <p className="text-center text-sm text-gray-500 mt-4">
-        Or email us directly: <a href="mailto:contact@alritz.in" className="underline">contact@alritz.in</a>
+        Or email us directly: <a href="mailto:alritz.consultancy@gmail.com" className="underline">alritz.consultancy@gmail.com</a>
       </p>
     </div>
   );

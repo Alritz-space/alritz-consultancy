@@ -75,7 +75,7 @@ export default function Layout() {
             rel="noopener noreferrer"
             className="hover:text-blue-400"
           >
-            <FaXTwitter size={20} />
+            <FaTwitter size={20} />
           </a>
           <a
             href="https://www.linkedin.com/company/alritzconsultancy"
@@ -108,7 +108,7 @@ export default function Layout() {
           rel="noopener noreferrer"
           className="bg-gray-900 p-3 rounded-full text-white hover:bg-gray-800 shadow-lg transition-transform hover:scale-105"
         >
-          <FaXTwitter size={18} />
+          <FaTwitter size={18} />
         </a>
         <a
           href="https://www.linkedin.com/company/alritzconsultancy"

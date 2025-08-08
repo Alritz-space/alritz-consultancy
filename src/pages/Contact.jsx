@@ -1,21 +1,49 @@
 // src/pages/Contact.jsx
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Contact() {
+  const [status, setStatus] = useState('');
+  const FORM_ENDPOINT = "https://formspree.io/f/mnnzodva"; // Replace with your Formspree endpoint
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (response.ok) {
+        setStatus('SUCCESS');
+        e.target.reset();
+      } else {
+        setStatus('ERROR');
+      }
+    } catch (err) {
+      setStatus('ERROR');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white text-gray-800 px-4 py-12">
       <div className="max-w-3xl mx-auto text-center">
         <h1 className="text-4xl font-bold mb-4">Contact Alritz Consultancy</h1>
         <p className="text-lg text-gray-600 mb-8">
-          Have questions or need help with taxes, GST, or financial planning? Fill out the form below.
+          Have questions about Income Tax, GST, or Financial Planning?  
+          Fill out the form and we’ll get back to you soon.
         </p>
       </div>
 
       <form
-        action="https://formspree.io/f/mnnzodva" // <-- Replace with your Formspree endpoint
-        method="POST"
+        onSubmit={handleSubmit}
         className="max-w-xl mx-auto bg-gray-50 shadow-lg p-6 rounded-lg space-y-4"
       >
+        {/* Hidden field for spam protection */}
+        <input type="text" name="_gotcha" style={{ display: 'none' }} />
+
         <input
           type="text"
           name="name"
@@ -43,6 +71,17 @@ export default function Contact() {
         >
           Send Message
         </button>
+
+        {status === 'SUCCESS' && (
+          <p className="text-green-600 mt-2 text-sm">
+            ✅ Your message has been sent! We’ll reply soon.
+          </p>
+        )}
+        {status === 'ERROR' && (
+          <p className="text-red-600 mt-2 text-sm">
+            ❌ Oops! Something went wrong. Please try again later.
+          </p>
+        )}
       </form>
     </div>
   );

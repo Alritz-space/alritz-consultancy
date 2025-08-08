@@ -3,10 +3,13 @@ const { fontFamily } = require('tailwindcss/defaultTheme');
 module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', ...fontFamily.sans],
+      },
       keyframes: {
         fadeIn: {
           '0%': { opacity: 0, transform: 'translateY(10px)' },
@@ -19,6 +22,6 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
+    require('@tailwindcss/forms')
   ],
 };

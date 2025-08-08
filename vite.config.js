@@ -12,7 +12,7 @@ export default defineConfig({
   // Optional: Externalize packages if needed during CI build
   build: {
     rollupOptions: {
-      external: [],
+      external: ["react-icons/fa"],
     },
   },
 });

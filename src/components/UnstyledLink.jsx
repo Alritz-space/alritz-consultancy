@@ -1,20 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function UnstyledLink(props) {
-  const href = props.href;
+export default function UnstyledLink({ href, className, children, ...rest }) {
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
 
   if (isInternalLink) {
-    return <Link to={href} {...props} className={`${props?.className}`} />;
+    return (
+      <Link to={href} className={className} {...rest}>
+        {children}
+      </Link>
+    );
   }
 
   return (
     <a
-      className={`${props?.className}`}
+      href={href}
+      className={className}
       target='_blank'
       rel='noopener noreferrer'
-      {...props}
-    />
+      {...rest}
+    >
+      {children}
+    </a>
   );
 }

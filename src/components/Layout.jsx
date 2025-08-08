@@ -44,14 +44,9 @@ export default function Layout() {
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-4">
           <a href="mailto:alritz.consultancy@gmail.com" className="inline-flex items-center gap-1 hover:underline">
             <EnvelopeIcon className="h-4 w-4" /> alritz.consultancy@gmail.com
-          </a>
           <span className="hidden md:inline">|</span>
-          <a href="tel:+919999999999" className="inline-flex items-center gap-1 hover:underline">
-            <PhoneIcon className="h-4 w-4" /> +91-99999-99999
-          </a>
-          <span className="hidden md:inline">|</span>
-          <a href="https://github.com/Alritz-space/alritz-consultancy" target="_blank" rel="noopener noreferrer" className="hover:underline">
-            GitHub
+          <a href="https://alritz-space.github.io/alritz-consultancy/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+            Alritz Consultancy
           </a>
         </div>
         <div>© {new Date().getFullYear()} Alritz Consultancy. All rights reserved.</div>
@@ -72,7 +67,6 @@ export default function Layout() {
           <path d="M16.71 13.2c-.29-.14-1.71-.84-1.97-.93-.26-.1-.45-.14-.64.15s-.74.93-.91 1.12c-.17.2-.34.22-.63.07-1.73-.86-2.86-1.53-4.01-3.46-.3-.51.3-.47.86-1.56.1-.2.05-.37-.03-.52-.08-.14-.64-1.54-.88-2.12-.23-.56-.46-.49-.63-.5h-.54c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.5 1.06 2.9 1.21 3.1c.15.2 2.09 3.2 5.08 4.48.71.31 1.27.49 1.7.62.72.23 1.38.2 1.9.13.58-.09 1.71-.7 1.95-1.38.24-.67.24-1.24.17-1.36-.07-.11-.26-.18-.55-.32z" />
           <path d="M20.52 3.48C18.2 1.16 15.22 0 12 0 5.38 0 0 5.38 0 12c0 2.11.55 4.14 1.6 5.94L0 24l6.25-1.64A11.89 11.89 0 0012 24c6.62 0 12-5.38 12-12 0-3.22-1.16-6.2-3.48-8.52zM12 22c-1.75 0-3.49-.46-5.01-1.33l-.36-.2-3.71.97.99-3.63-.24-.37A9.94 9.94 0 012 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10z" />
         </svg>
-        WhatsApp Us
       </a>
     </div>
   );

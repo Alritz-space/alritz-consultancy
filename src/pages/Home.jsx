@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const services = [
   {
@@ -35,45 +36,66 @@ const services = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-50 to-white shadow-md py-20 text-center">
-        <div className="max-w-5xl mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-blue-900 mb-6 leading-tight">
-            Trusted Tax Consultancy for Individuals & Small Businesses
-          </h1>
-          <p className="text-lg md:text-xl text-slate-700 mb-10 max-w-2xl mx-auto">
-            Alritz Consultancy helps you navigate Income Tax, GST Filing, and Financial Planning — so you can focus on growth, not paperwork.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-block px-8 py-4 bg-blue-700 text-white rounded-lg font-semibold shadow hover:scale-105 transition-transform duration-300 focus:outline-none focus:ring-4 focus:ring-blue-400"
-          >
-            Contact Us
-          </Link>
-        </div>
-      </section>
+    <>
+      <Helmet>
+        <title>Alritz Consultancy | Trusted Tax Consultant India – Income Tax, GST, Financial Planning</title>
+        <meta name="description" content="Alritz Consultancy provides Income Tax filing, GST compliance, and financial planning services for individuals, NRIs, sole proprietors, and small businesses in India. Trusted tax solutions by certified TRPS." />
+        <meta name="keywords" content="Income Tax India, Tax Consultant India, GST Filing, NRI Tax, Tax Consultancy, Financial Planning, Tax Returns, Small Business Tax, Sole Proprietor Tax" />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Alritz Consultancy | Trusted Tax Consultant India" />
+        <meta property="og:description" content="Professional Income Tax, GST, and financial planning support for Indian taxpayers and businesses." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://alritz-space.github.io/alritz-consultancy/" />
+        <meta property="og:image" content="https://alritz-space.github.io/alritz-consultancy/og-image.png" />
 
-      {/* Services Section */}
-      <section className="mt-16 mb-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-blue-800 mb-10 text-center">Our Core Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 hover:scale-[1.03] text-center"
-              >
-                <div className="w-16 h-16 mb-6 mx-auto flex items-center justify-center rounded-full bg-blue-100 text-blue-600">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-blue-700 mb-3">{service.title}</h3>
-                <p className="text-sm text-slate-600">{service.desc}</p>
-              </div>
-            ))}
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Alritz Consultancy | Trusted Tax Consultant India" />
+        <meta name="twitter:description" content="Income Tax, GST services, and financial planning for individuals and businesses." />
+        <meta name="twitter:image" content="https://alritz-space.github.io/alritz-consultancy/og-image.png" />
+      </Helmet>
+
+      <div className="flex flex-col">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-r from-blue-50 to-white shadow-md py-20 text-center">
+          <div className="max-w-5xl mx-auto px-4">
+            <h1 className="text-4xl md:text-6xl font-extrabold text-blue-900 mb-6 leading-tight">
+              Trusted Tax Consultancy for Individuals & Small Businesses
+            </h1>
+            <p className="text-lg md:text-xl text-slate-700 mb-10 max-w-2xl mx-auto">
+              Alritz Consultancy helps you navigate Income Tax, GST Filing, and Financial Planning — so you can focus on growth, not paperwork.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-block px-8 py-4 bg-blue-700 text-white rounded-lg font-semibold shadow hover:scale-105 transition-transform duration-300 focus:outline-none focus:ring-4 focus:ring-blue-400"
+            >
+              Contact Us
+            </Link>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+
+        {/* Services Section */}
+        <section className="mt-16 mb-20">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl font-bold text-blue-800 mb-10 text-center">Our Core Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              {services.map((service) => (
+                <div
+                  key={service.title}
+                  className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 hover:scale-[1.03] text-center"
+                >
+                  <div className="w-16 h-16 mb-6 mx-auto flex items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-blue-700 mb-3">{service.title}</h3>
+                  <p className="text-sm text-slate-600">{service.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
   );
 }

@@ -1,15 +1,6 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 
-export default function PrivateRoute({ component: Component, ...rest }) {
-  const authenticated = true;
-
-  return (
-    <Route
-      {...rest}
-      render={(props) =>
-        authenticated ? <Component {...props} /> : <Redirect to={'/login'} />
-      }
-    />
-  );
+export default function PrivateRoute({ authenticated }) {
+  return authenticated ? <Outlet /> : <Navigate to="/login" />;
 }

@@ -1,7 +1,7 @@
 // src/components/Layout.jsx
 import React from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa6';
+import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 
 export default function Layout() {
   const location = useLocation();

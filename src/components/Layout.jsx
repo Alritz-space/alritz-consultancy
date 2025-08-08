@@ -49,12 +49,12 @@ export default function Layout() {
           </Link>
           <span className="hidden md:inline">|</span>
           <a
-            href="https://github.com/Alritz-space/alritz-consultancy"
+            href="https://alritz-space.github.io/alritz-consultancy"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:underline"
           >
-            GitHub
+            Alritz Consultancy
           </a>
         </div>
         <div>

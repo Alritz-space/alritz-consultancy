@@ -33,7 +33,7 @@
       url('/fonts/inter-bold-webfont.woff') format('woff');
   }
 
-  /* Write your own custom base styles here */
+  /* Custom base styles */
   h1 {
     @apply text-3xl font-bold md:text-5xl font-sans;
   }
@@ -51,14 +51,11 @@
   }
 
   body {
-    @apply text-sm font-inter bg-white text-gray-800;
+    @apply text-sm font-sans bg-white text-gray-800;
   }
 
   .layout {
-    /* 750px */
-    /* max-width: 43.75rem; */
-
-    /* 1100px */
+    /* 1100px max-width */
     max-width: 68.75rem;
     @apply w-11/12 mx-auto;
   }

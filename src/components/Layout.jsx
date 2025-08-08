@@ -1,6 +1,7 @@
 // src/components/Layout.jsx
 import React from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
+import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa6';
 
 export default function Layout() {
   const location = useLocation();
@@ -57,28 +58,75 @@ export default function Layout() {
             Alritz Consultancy
           </a>
         </div>
+
+        {/* Social Links */}
+        <div className="flex justify-center gap-6 mb-4">
+          <a
+            href="https://www.facebook.com/AlritzConsultancy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-400"
+          >
+            <FaFacebookF size={20} />
+          </a>
+          <a
+            href="https://x.com/AlritzConsultan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-400"
+          >
+            <FaXTwitter size={20} />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/alritzconsultancy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-400"
+          >
+            <FaLinkedinIn size={20} />
+          </a>
+        </div>
+
         <div>
           © {new Date().getFullYear()} Alritz Consultancy. All rights reserved.
         </div>
       </footer>
 
-      {/* Floating WhatsApp Button */}
-      <a
-        href="https://wa.me/918237808439"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-full shadow-lg flex items-center gap-2 transition-transform hover:scale-105"
-      >
-        <svg
-          className="w-5 h-5"
-          fill="currentColor"
-          viewBox="0 0 24 24"
+      {/* Floating Social Media Strip */}
+      <div className="fixed top-1/2 right-6 -translate-y-1/2 flex flex-col gap-3 z-50">
+        <a
+          href="https://facebook.com/AlritzConsultancy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-600 p-3 rounded-full text-white hover:bg-blue-700 shadow-lg transition-transform hover:scale-105"
         >
-          <path d="M16.71 13.2c-.29-.14-1.71-.84-1.97-.93-.26-.1-.45-.14-.64.15s-.74.93-.91 1.12c-.17.2-.34.22-.63.07-1.73-.86-2.86-1.53-4.01-3.46-.3-.51.3-.47.86-1.56.1-.2.05-.37-.03-.52-.08-.14-.64-1.54-.88-2.12-.23-.56-.46-.49-.63-.5h-.54c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.5 1.06 2.9 1.21 3.1c.15.2 2.09 3.2 5.08 4.48.71.31 1.27.49 1.7.62.72.23 1.38.2 1.9.13.58-.09 1.71-.7 1.95-1.38.24-.67.24-1.24.17-1.36-.07-.11-.26-.18-.55-.32z" />
-          <path d="M20.52 3.48C18.2 1.16 15.22 0 12 0 5.38 0 0 5.38 0 12c0 2.11.55 4.14 1.6 5.94L0 24l6.25-1.64A11.89 11.89 0 0012 24c6.62 0 12-5.38 12-12 0-3.22-1.16-6.2-3.48-8.52zM12 22c-1.75 0-3.49-.46-5.01-1.33l-.36-.2-3.71.97.99-3.63-.24-.37A9.94 9.94 0 012 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10z" />
-        </svg>
-        WhatsApp Us
-      </a>
+          <FaFacebookF size={18} />
+        </a>
+        <a
+          href="https://x.com/AlritzConsultan"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gray-900 p-3 rounded-full text-white hover:bg-gray-800 shadow-lg transition-transform hover:scale-105"
+        >
+          <FaXTwitter size={18} />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/alritzconsultancy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-700 p-3 rounded-full text-white hover:bg-blue-800 shadow-lg transition-transform hover:scale-105"
+        >
+          <FaLinkedinIn size={18} />
+        </a>
+        <a
+          href="https://wa.me/918237808439"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-500 p-3 rounded-full text-white hover:bg-green-600 shadow-lg transition-transform hover:scale-105"
+        >
+          <FaWhatsapp size={18} />
+        </a>
+      </div>
     </div>
   );
 }

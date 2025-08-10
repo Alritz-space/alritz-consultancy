@@ -39,14 +39,10 @@ const services = [
 ];
 
 export default function Home() {
-  const [flipped, setFlipped] = useState(Array(services.length).fill(false));
+  const [flippedIndex, setFlippedIndex] = useState(null);
 
   const toggleFlip = (index) => {
-    setFlipped((prev) => {
-      const updated = [...prev];
-      updated[index] = !updated[index];
-      return updated;
-    });
+    setFlippedIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
   return (
@@ -93,7 +89,7 @@ export default function Home() {
                 >
                   <div
                     className={`relative w-full h-64 transform-style flip-transition ${
-                      flipped[index] ? 'rotate-y-180' : ''
+                      flippedIndex === index ? 'rotate-y-180' : ''
                     }`}
                   >
                     {/* Front */}

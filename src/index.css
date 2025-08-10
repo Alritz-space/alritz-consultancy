@@ -75,4 +75,7 @@
   .backface-hidden {
     backface-visibility: hidden;
   }
+  .flip-transition {
+    transition: transform 0.6s ease-in-out;
+  }
 }

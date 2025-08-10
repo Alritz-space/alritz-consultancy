@@ -1,3 +1,4 @@
+// src/components/ServiceCard.jsx
 import React, { useState } from 'react';
 
 export default function ServiceCard({ icon, title, description, moreInfo }) {
@@ -5,35 +6,27 @@ export default function ServiceCard({ icon, title, description, moreInfo }) {
 
   return (
     <div
-      className="relative w-80 h-60"
-      style={{ perspective: '1000px' }}
+      className="relative w-full max-w-xs h-64 cursor-pointer"
       onClick={() => setFlipped(!flipped)}
+      style={{ perspective: '1000px' }}
     >
       <div
-        className={`relative w-full h-full transition-transform duration-700`}
-        style={{
-          transformStyle: 'preserve-3d',
-          transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
-        }}
+        className={`relative w-full h-full transition-transform duration-500 transform ${
+          flipped ? 'rotate-y-180' : ''
+        }`}
+        style={{ transformStyle: 'preserve-3d' }}
       >
         {/* Front */}
-        <div
-          className="absolute w-full h-full bg-white rounded-xl shadow-md p-6 text-center flex flex-col items-center justify-center"
-          style={{ backfaceVisibility: 'hidden' }}
-        >
-          <div className="text-blue-500 text-4xl mb-4">{icon}</div>
-          <h3 className="text-lg font-bold text-blue-700 mb-2">{title}</h3>
+        <div className="absolute w-full h-full bg-white shadow-md rounded-lg flex flex-col items-center justify-center p-4 text-center backface-hidden">
+          <div className="mb-4">{icon}</div>
+          <h3 className="text-lg font-bold text-blue-600 mb-2">{title}</h3>
           <p className="text-gray-600 text-sm">{description}</p>
         </div>
 
         {/* Back */}
-        <div
-          className="absolute w-full h-full bg-blue-50 rounded-xl shadow-md p-6 text-center flex flex-col items-center justify-center"
-          style={{ transform: 'rotateY(180deg)', backfaceVisibility: 'hidden' }}
-        >
-          <h4 className="text-blue-700 font-bold mb-3">{title} – Details</h4>
+        <div className="absolute w-full h-full bg-blue-50 shadow-md rounded-lg flex flex-col items-center justify-center p-4 text-center rotate-y-180 backface-hidden">
+          <h3 className="text-lg font-bold text-blue-800 mb-2">More Info</h3>
           <p className="text-gray-700 text-sm">{moreInfo}</p>
-          <span className="mt-4 text-xs text-gray-500">(Click to flip back)</span>
         </div>
       </div>
     </div>

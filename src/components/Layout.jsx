@@ -48,24 +48,24 @@ export default function Layout() {
             Alritz Consultancy
           </Link>
           <div className="space-x-6 text-sm font-medium">
-            {navLinks.map((link) => (
+            {navLinks.map(({ path, label }) => (
               <Link
-                key={link.path}
-                to={link.path}
+                key={path}
+                to={path}
                 className={`hover:text-blue-600 ${
-                  location.pathname === link.path
+                  location.pathname === path
                     ? 'text-blue-700'
                     : 'text-slate-700'
                 }`}
               >
-                {link.label}
+                {label}
               </Link>
             ))}
           </div>
         </nav>
       </header>
 
-      {/* Main Content */}
+      {/* Page Content */}
       <main className="flex-grow">
         <Outlet />
       </main>
@@ -87,7 +87,7 @@ export default function Layout() {
           </a>
         </div>
 
-        {/* Social Icons */}
+        {/* Footer Social Icons */}
         <div className="flex justify-center gap-6 mb-4">
           {socialLinks.slice(0, 3).map(({ href, icon }, idx) => (
             <a
@@ -102,10 +102,12 @@ export default function Layout() {
           ))}
         </div>
 
-        <p>© {new Date().getFullYear()} Alritz Consultancy. All rights reserved.</p>
+        <p>
+          © {new Date().getFullYear()} Alritz Consultancy. All rights reserved.
+        </p>
       </footer>
 
-      {/* Floating Social Media Strip */}
+      {/* Floating Social Strip */}
       <div className="fixed top-1/2 right-6 -translate-y-1/2 flex flex-col gap-3 z-50">
         {socialLinks.map(({ href, icon, bg }, idx) => (
           <a
